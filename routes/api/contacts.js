@@ -1,6 +1,6 @@
 const express = require('express');
 
-const contactsController = require("../../controllers/contacts-controller")
+const {contactsController} = require("../../controllers")
 
 const {schemas} = require("../../models/contact");
 
