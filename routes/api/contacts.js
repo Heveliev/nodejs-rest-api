@@ -4,7 +4,8 @@ const {contactsController} = require("../../controllers");
 
 const {contactSchemas} = require("../../models/contact");
 
-const {validateBody, isValidId, authenticate} = require("../../decorators");
+const {validateBody, isValidId,} = require("../../decorators");
+const { authenticate} = require("../../midlewares");
 
 
 const router = express.Router();
