@@ -1,7 +1,8 @@
 const express = require("express");
-const {validateBody, authenticate} = require("../../decorators");
+const {validateBody} = require("../../decorators");
 const {userSchemas} = require("../../models");
-const {authController} = require("../../controllers")
+const {authController} = require("../../controllers");
+const { authenticate, upload} = require("../../midlewares");
 
 
 
@@ -17,5 +18,6 @@ router.post("/logout", authenticate, authController.logout);
 
 router.patch("/", authenticate, validateBody(userSchemas.updateSubscriptionSchema), authController.updateSubscription)
 
+router.patch("/avatars",authenticate, upload.single("avatar"),authController.changeAvatar)
 
 module.exports = router

@@ -24,6 +24,5 @@ router.put('/:contactId', authenticate, isValidId, validateBody(contactSchemas.c
 
 router.patch('/:contactId/favorite', authenticate, isValidId, validateBody(contactSchemas.updateFavoriteSchema), contactsController.updateFavorite)
 
-// router.
 
 module.exports = router
