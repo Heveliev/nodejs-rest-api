@@ -16,10 +16,15 @@ const updateSubscriptionSchema = Joi.object({
   subscription: Joi.string().valid("starter", "pro", "business").required(),
 })
 
+const vetifySchema = Joi.object({
+  email:Joi.string().required(),
+})
+
   const schemas = {
     registerSchema,
     loginSchema,
     updateSubscriptionSchema,
+    vetifySchema,
 
   }
 
